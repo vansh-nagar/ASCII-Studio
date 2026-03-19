@@ -136,6 +136,13 @@ fontFamily: 'Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospac
 
 export default function RedFire() {
   const [currentFrame, setCurrentFrame] = useState(0);
+  const [fontsLoaded, setFontsLoaded] = useState(false);
+
+  useEffect(() => {
+    document.fonts.ready.then(() => {
+      setFontsLoaded(true);
+    });
+  }, []);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -154,19 +161,25 @@ export default function RedFire() {
         position: "relative",
       }}
     >
-      <pre
-        style={{
-          fontFamily: appearance.fontFamily,
-          fontSize: appearance.fontSize,
-          lineHeight: appearance.lineHeight,
-          margin: 0,
-          position: "relative",
-          whiteSpace: "pre",
-          zIndex: 1,
-        }}
-      >
-        {frames[currentFrame]}
-      </pre>
+      {fontsLoaded ? (
+        <pre
+          style={{
+            fontFamily: appearance.fontFamily,
+            fontSize: appearance.fontSize,
+            lineHeight: appearance.lineHeight,
+            margin: 0,
+            position: "relative",
+            whiteSpace: "pre",
+            zIndex: 1,
+          }}
+        >
+          {frames[currentFrame]}
+        </pre>
+      ) : (
+        <div style={{ fontFamily: "monospace", visibility: "hidden" }}>
+          {frames[0]}
+        </div>
+      )}
     </div>
   );
 }

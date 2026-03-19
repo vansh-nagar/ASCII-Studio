@@ -114,8 +114,15 @@ fontFamily: 'Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospac
 export default function Cd() {
   const [currentFrame, setCurrentFrame] = useState(0);
   const [scale, setScale] = useState(1);
+  const [fontsLoaded, setFontsLoaded] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLPreElement>(null);
+
+  useEffect(() => {
+    document.fonts.ready.then(() => {
+      setFontsLoaded(true);
+    });
+  }, []);
 
   // Animation logic using requestAnimationFrame for smoothness
   useEffect(() => {
@@ -230,7 +237,8 @@ export default function Cd() {
             Frame: {currentFrame + 1}/{FRAMES.length}
           </div>
         )}
-        <pre
+        {fontsLoaded ? (
+          <pre
           ref={contentRef}
           className={
             isVideo
@@ -267,6 +275,11 @@ export default function Cd() {
         >
           {FRAMES[currentFrame]}
         </pre>
+      ) : (
+        <div style={{ visibility: "hidden", fontFamily: "monospace" }}>
+          {FRAMES[0]}
+        </div>
+      )}
       </div>
     </div>
   );
