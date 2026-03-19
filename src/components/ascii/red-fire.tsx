@@ -130,7 +130,6 @@ const appearance = {
     'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
   fontSize: 8,
   lineHeight: 0.78,
-  showFrameCounter: false,
   textColor: "#ff0000",
   textEffect: "glitch",
 } as const;
@@ -147,27 +146,17 @@ export default function RedFire() {
   }, []);
 
   return (
-    <div
+    <pre
       style={{
         color: appearance.textColor,
         fontFamily: appearance.fontFamily,
-        overflowX: "auto",
-        position: "relative",
+        fontSize: appearance.fontSize,
+        lineHeight: appearance.lineHeight,
+        margin: 0,
+        whiteSpace: "pre",
       }}
     >
-      <pre
-        style={{
-          fontFamily: appearance.fontFamily,
-          fontSize: appearance.fontSize,
-          lineHeight: appearance.lineHeight,
-          margin: 0,
-          position: "relative",
-          whiteSpace: "pre",
-          zIndex: 1,
-        }}
-      >
-        {frames[currentFrame]}
-      </pre>
-    </div>
+      {frames[currentFrame]}
+    </pre>
   );
 }

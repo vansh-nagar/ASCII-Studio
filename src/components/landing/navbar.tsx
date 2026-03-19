@@ -2,8 +2,10 @@
 
 import React from "react";
 import Link from "next/link";
-import { Github, Twitter } from "lucide-react";
+import { Github, Search, Twitter } from "lucide-react";
 import { Button } from "../ui/button";
+import { Input } from "../ui/input";
+import { ButtonGroup } from "../ui/button-group";
 
 const navLinks = [
   { name: "Products", href: "#" },
@@ -34,7 +36,13 @@ export default function Navbar() {
         </div>
 
         {/* Social buttons right */}
-        <nav className="flex flex-1 justify-end items-center gap-2 min-w-0">
+        <nav className="flex flex-1 justify-end items-center gap-2 ">
+          <ButtonGroup>
+            <Button variant="outline">
+              <Search />
+            </Button>
+            <Input placeholder="Search component..." className="w-40" />
+          </ButtonGroup>
           {/* <ThemeToggle customClass={buttonStyles} /> */}
           <Button variant="outline" size="icon">
             <Github className="w-6 h-6 text-[#C5C5C5]" />
