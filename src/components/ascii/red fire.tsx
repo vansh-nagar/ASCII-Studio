@@ -127,7 +127,7 @@ const frames = [
 ];
 const appearance = {
   fontFamily:
-    'JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+    'Menlo',
   fontSize: 8,
   lineHeight: 0.78,
   showFrameCounter: false,

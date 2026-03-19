@@ -99,8 +99,7 @@ const FRAMES = [
 const APPEARANCE = {
   backgroundColor: "#000000",
   borderRadius: 8,
-  fontFamily:
-    'JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+  fontFamily:    'Menlo',
   fontSize: 6,
   fontWeight: "normal",
   fontStyle: "normal",
