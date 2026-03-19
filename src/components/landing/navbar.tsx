@@ -14,7 +14,7 @@ const navLinks = [
 
 export default function Navbar() {
   return (
-    <header className="fixed top-6 left-1/2 -translate-x-1/2 w-[70vw] z-50 rounded-3xl  border-dashed border ">
+    <header className="fixed top-6 left-1/2 -translate-x-1/2 w-[70vw] z-50 rounded-3xl  bg-background/40 backdrop-blur-lg border-dashed border ">
       <div className="container flex w-full items-center px-4 py-3">
         {/* Logo left */}
         <div className="flex flex-1 items-center gap-2 min-w-0">

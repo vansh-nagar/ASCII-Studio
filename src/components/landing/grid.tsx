@@ -30,7 +30,7 @@ const AsciiAnimationsGrid = () => {
           <div className="z-30">{item.component}</div>
 
           <div className="leading-1 absolute left-4 bottom-4">
-            <p className="text-sm">{item.name}</p>
+            <p className="text-xs font-medium">{item.name}</p>
             <p className="text-xs text-muted-foreground">{item.description}</p>
           </div>
 

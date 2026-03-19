@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "registry:build": "shadcn build ./registry.json -o ./public/r",
     "rbuild": "shadcn build ./registry.json -o ./public/r"
   },
   "dependencies": {
