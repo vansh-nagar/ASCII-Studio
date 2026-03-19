@@ -99,7 +99,7 @@ const FRAMES = [
 const APPEARANCE = {
   backgroundColor: "#000000",
   borderRadius: 8,
-  fontFamily:    'Menlo',
+fontFamily: 'Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
   fontSize: 6,
   fontWeight: "normal",
   fontStyle: "normal",
