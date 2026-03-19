@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { trimAsciiFrames } from "./trim-frames";
+import React, { useEffect, useRef, useState } from "react";
 
 const FPS = 30;
 const FRAMES = [
@@ -97,7 +96,6 @@ const FRAMES = [
   "                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                            ...----:::::----...                                                                   \r\n                                      .-:=+*+=+++*oo**+++**+++++===:--.                                                           \r\n                                  -:+ooOOo*--+**+.-:-:===.:+==:::::===++=::..                                                     \r\n                              .-=*****++=:.:***o+=+*++=:::--++++==:---.--:=++=:-.                                                 \r\n                            -=+**==:=:::-.=o*o+:+o**+..-::-.:==:--:=--::--.::=+**+=:.                                             \r\n                          -=***+=:=====:.=***=.--:*+:=*+-:**=:==-+*+:-::=:--..-=+*ooo*=-.                                         \r\n                        .=*o****+===::+o+=++-.=*+-:--:-.:++:.:++**o***=.:==.....-:=++**o*+:.                                      \r\n                      .-+o*******+=:=**+=*Oo-+O*=**+++:--:::==::::=::-:+*=:-:::..-======++*+=-                                    \r\n                     .:*o**********++==::=+==*+:**=*O*--*o+*o*+=.:=::+++===:::-.-=+=========++=-.                                 \r\n                    .:*oooo**ooooooOOOOoo**+******+**::**=*o+:+o=-++:-::---..-:+*ooo****+++====+=:.                               \r\n                   .-+OooOOOOOOOOOOOOOOOOOOOoo*******ooo*+++:=+::*o=+o*::=::=++******oooooooo**++++:                              \r\n                  ..:oOOOOOOOOOOOOOOOOOOOOOOOOOoooo**+++=====:::====+::+o*===::===++++++++++********+-                            \r\n                  .-=O#OOOOOOOOOOOOOOOOOOOOOOOOoooo***+++++*+++++++++=+++==-:=++++++++++++++++++++++**+.                          \r\n                  .:+#OOOOOOOOOOOOOOOOOOOOoo****++++++++**+=:--------::=+++++=:::::::--::++++++++=====+*:                         \r\n                  .-+#OOOOOOOOOOOOOOOOoo***++++++++++++*=:----------------:=+=-..........------:-.-----=*+.                       \r\n                  .-+OOOOOOOOOOOOOooo***++++++++++++++*=:----:-.......-------:==-..   .....-:::::::--- -+*=.                      \r\n                   -=O##OOOOOOOo*****++++++++++++++++++:----:...        ...--.-:+:       .:=+=:::::::::--:++.                     \r\n                   .:+**ooOOo*******++++++++++++++===++:---:=..            .--..-=:  .-:. ::-:::+:::::::-..:=.                    \r\n                    .:-..-----::====+++++++++++++=++++*+--.-:..              --..-=: -=:  .:--:-.-::::::::. --                    \r\n                     --.................---:::==++++++*o+-...-..             .-...:+. .- -.-:.---:::::----- .:-                   \r\n                      --.       ..-----..       ...---:=+=-.......           -. ..-+  -:-... .---:-::-----. .--                   \r\n                       -.     .=++=:==:::::-.              ...  ..-.....---... ...=..::-::---  .---::---.   ....                  \r\n                        ..    :o:::::::-:-.-:-                 ............   ..-==..-----:::-.......  ...------                  \r\n                         ..   .++:::-::::::-.=:    -::::-                ......          ........-...------. .-:.                 \r\n                           .    -==:-:::..-:==-    :=-==::-   .                                   ...------. :=*-                 \r\n                                   ..:-=::---       ---:::-  -.. .  .                                        .-=.                 \r\n                                                       .       ..-..- ...  ..                -........                            \r\n                                                                             ..  ...  .      ..     ..                            \r\n                                                                                      .       .      ..                           \r\n                                              .   .                                           -.      .                           \r\n                                                                                              ----.--:=                           \r\n                                                                                              .. -.::-=.                          \r\n                                                                                                                                  \r\n                                                         ..               ...     .             .                                 \r\n                                                                                                                                  \r\n                                                                      ....   ...  ....                                            \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n",
   "                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                            ...----:::::----...                                                                   \r\n                                      .-:=+*+=+++*oo***++**+++++==::-..                                                           \r\n                                  -:+ooOOo*--+**+.---:===.:===:::::===+==:-..                                                     \r\n                              .-=*****++=:.:***o+=+*++=:::--++=+=::---..-:=++=:-.                                                 \r\n                            .=+**==:=:::-.=o*o*:+o**+..-::-.:=::--:=-.::--.::+***+=:.                                             \r\n                          -=****=:=====:.=***=.--:*+:=*+-:**=:==-+*+:-::::--..-=+*ooo*=-.                                         \r\n                        .=*o****+===::+o+=++-.:*+-:--:-.:*+:.:+++*o***=.:==.....-:=++**o*+:.                                      \r\n                      .-+o*******+=:=**+=+Oo-=O*=**=++:-::::==::::=::-:+*=:-:::..-======++*+=-                                    \r\n                     .:+o***********+==::=+==*+:**=*O*:-*o+*o*+=.:=::+++===:::-.-=+=========++=-                                  \r\n                    .:+oo*o**oooooOOOOOoo**+******+**::**=+o+=+o=-++=-::---...:+ooooo****++====+=:.                               \r\n                   .-+ooooOOOOOOOOOOOOOOOOOOoo*******ooo***+:=+::*o=+o*-::::=++*****ooooooooo*+++++:                              \r\n                  ..:oOOOOOOOOOOOOOOOOOOOOOOOOooooo**+++=====:::====+::+o*===::===++++++++++********+-                            \r\n                  .-=O#OOOOOOOOOOOOOOOOOOOOOOOOoooo***+++++*+++++++++=+++=:--:=+++++++++++++++++++++**+.                          \r\n                  .-+OOOOOOOOOOOOOOOOOOOOOoo***+++++++++**+=:--------::=+++++=::-:::::::=++++++++=====**:                         \r\n                  .-+OOOOOOOOOOOOOOOOOoo***++++++++++++*=:----------------:=+=-..........-:---::-.----:=*=                        \r\n                  .-+OOOOOOOOOOOOOooo**+++++++++++++++*=:----:--......-------:==-     .....-:::::::--. -+*=.                      \r\n                   .=O#OOOOOOOOo*****++++++++++++++++++=----=...        ...--.-:=:        :=+=:::::::::--:++.                     \r\n                    :+**ooOOoo*****+++++++++++++++===++:---:=..             --..-=:  .-:. ::::::+:::::::-..:=.                    \r\n                    .:-..-----:::====++++++++++++=++++*+--.-:..              --..-=: -=:  -:--:-.-::::::::. --                    \r\n                     --........... .....---:::===+++++*o+-...-..             .-...:+. .- -..:.---::::::---- .:-                   \r\n                      --.       ..-----..       ...---::==-.......           -. ..:=  -:-... .---::::-----. .--                   \r\n                       -.     .=++=:==:::::-.              ...  ..-.....----.. ...=..:::::---  .---::---.   ....                  \r\n                        ..    :o:::::::-:-.-:-                 ............   ..-== .---::-::-.......  ...------                  \r\n                         ..   .++::--:::::--.:=    -::::-               .......         .........-...------. .--                  \r\n                           .    -==:-:::-..:==:    :=-==::-   .                                   ..-------. :=*.                 \r\n                                   ..:-:::---       ---::::  -.. .  ..                                       .-=.                 \r\n                                                       .       ..-..- .... ..  .             -...... .                            \r\n                                                                             ..  .... .      ..      .                            \r\n                                                                                     ..       .      .                            \r\n                                              .. ..                                           -.      .                           \r\n                                                                                              ----.---=                           \r\n                                                                                              .. :.::-=.                          \r\n                                                                                                                                  \r\n                                                         ..                ..   . .             .                                 \r\n                                                               .                                                                  \r\n                                                                      ....   ...  ....                                            \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n                                                                                                                                  \r\n",
 ];
-const TRIMMED_FRAMES = trimAsciiFrames(FRAMES);
 const APPEARANCE = {
   backgroundColor: "#000000",
   borderRadius: 8,
@@ -108,6 +106,7 @@ const APPEARANCE = {
   fontStyle: "normal",
   letterSpacing: 0.34999999999999987,
   lineHeight: 1.15,
+  showFrameCounter: true,
   textColor: "#FFFFFF",
   textEffect: "none",
   useColors: true,
@@ -115,7 +114,11 @@ const APPEARANCE = {
 
 export default function Cd() {
   const [currentFrame, setCurrentFrame] = useState(0);
+  const [scale, setScale] = useState(1);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLPreElement>(null);
 
+  // Animation logic using requestAnimationFrame for smoothness
   useEffect(() => {
     let animationId: number;
     let lastTime = 0;
@@ -138,12 +141,51 @@ export default function Cd() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Responsive scaling logic (similar to studio fit-to-container)
+  useEffect(() => {
+    const measure = () => {
+      const container = containerRef.current;
+      const content = contentRef.current;
+      if (!container || !content) return;
+
+      const availableWidth = container.clientWidth;
+      const naturalWidth = content.scrollWidth;
+
+      if (
+        availableWidth > 0 &&
+        naturalWidth > 0 &&
+        naturalWidth > availableWidth
+      ) {
+        setScale(availableWidth / naturalWidth);
+      } else {
+        setScale(1);
+      }
+    };
+
+    measure();
+    const observer = new ResizeObserver(measure);
+    if (containerRef.current) observer.observe(containerRef.current);
+    return () => observer.disconnect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const isVideo = APPEARANCE.textEffect === "video";
   const isGradient = APPEARANCE.textEffect === "gradient";
   const isBurn = APPEARANCE.textEffect === "burn";
 
   return (
-    <>
+    <div
+      ref={containerRef}
+      style={{
+        borderRadius: `${APPEARANCE.borderRadius}px`,
+        display: "flex",
+        flexDirection: "column",
+        fontFamily: APPEARANCE.fontFamily,
+        overflow: "hidden",
+        position: "relative",
+        width: "100%",
+      }}
+    >
       {(isVideo || isGradient || isBurn) && (
         /* eslint-disable-next-line react/no-danger */
         <style
@@ -180,42 +222,53 @@ export default function Cd() {
           }}
         />
       )}
-      <pre
-        className={
-          isVideo
-            ? "ascii-effect-video"
-            : isGradient
-              ? "ascii-effect-gradient"
-              : isBurn
-                ? "ascii-effect-burn"
-                : ""
-        }
-        style={{
-          fontFamily: APPEARANCE.fontFamily,
-          fontSize: `${APPEARANCE.fontSize}px`,
-          lineHeight: APPEARANCE.lineHeight,
-          margin: 0,
-          whiteSpace: "pre",
-          ...(APPEARANCE.textEffect === "matrix"
-            ? {
-                color: "#00ff00",
-                textShadow: "0 0 10px #00ff00, 0 0 20px #00ff00",
-              }
-            : APPEARANCE.textEffect === "neon"
-              ? {
-                  color: "#ff00ff",
-                  textShadow:
-                    "0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff",
-                }
-              : APPEARANCE.textEffect === "glitch"
-                ? {
-                    textShadow: "2px 0 0 red, -2px 0 0 blue",
-                  }
-                : {}),
-        }}
+
+      <div
+        style={{ transform: `scale(${scale})`, transformOrigin: "left top" }}
       >
-        {TRIMMED_FRAMES[currentFrame]}
-      </pre>
-    </>
+        {APPEARANCE.showFrameCounter && (
+          <div style={{ opacity: 0.5, fontSize: "10px", marginBottom: "8px" }}>
+            Frame: {currentFrame + 1}/{FRAMES.length}
+          </div>
+        )}
+        <pre
+          ref={contentRef}
+          className={
+            isVideo
+              ? "ascii-effect-video"
+              : isGradient
+                ? "ascii-effect-gradient"
+                : isBurn
+                  ? "ascii-effect-burn"
+                  : ""
+          }
+          style={{
+            fontFamily: "inherit",
+            fontSize: `${APPEARANCE.fontSize}px`,
+            lineHeight: APPEARANCE.lineHeight,
+            margin: 0,
+            whiteSpace: "pre",
+            ...(APPEARANCE.textEffect === "matrix"
+              ? {
+                  color: "#00ff00",
+                  textShadow: "0 0 10px #00ff00, 0 0 20px #00ff00",
+                }
+              : APPEARANCE.textEffect === "neon"
+                ? {
+                    color: "#ff00ff",
+                    textShadow:
+                      "0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 40px #ff00ff",
+                  }
+                : APPEARANCE.textEffect === "glitch"
+                  ? {
+                      textShadow: "2px 0 0 red, -2px 0 0 blue",
+                    }
+                  : {}),
+          }}
+        >
+          {FRAMES[currentFrame]}
+        </pre>
+      </div>
+    </div>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import Cd from "../ascii/cd";
-import RedFire from "../ascii/red-fire";
+import RedFire from "../ascii/red fire";
 import CopyDropdown from "./copy-drop-down";
 import { useSearch } from "./search-context";
 
