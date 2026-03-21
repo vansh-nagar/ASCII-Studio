@@ -12,26 +12,36 @@ export default function Navbar() {
 
   useEffect(() => {
     let previousScrollPos = window.scrollY;
+    let ticking = false;
     
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
+      const scrollDiff = Math.abs(currentScrollPos - previousScrollPos);
       
-      // Show if scrolling up or at the very top
+      // Only update if we've scrolled a decent amount (threshold of 5px) or are at the top
       if (currentScrollPos < 50) {
         setVisible(true);
-      } else if (previousScrollPos < currentScrollPos) {
-        // Scrolling down
-        setVisible(false);
-      } else {
-        // Scrolling up
-        setVisible(true);
+        previousScrollPos = currentScrollPos;
+      } else if (scrollDiff > 5) {
+        if (previousScrollPos < currentScrollPos) {
+          setVisible(false);
+        } else {
+          setVisible(true);
+        }
+        previousScrollPos = currentScrollPos;
       }
-      
-      previousScrollPos = currentScrollPos;
+      ticking = false;
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(handleScroll);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (

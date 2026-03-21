@@ -232,11 +232,6 @@ export default function Cd() {
       <div
         style={{ transform: `scale(${scale})`, transformOrigin: "left top" }}
       >
-        {APPEARANCE.showFrameCounter && (
-          <div style={{ opacity: 0.5, fontSize: "10px", marginBottom: "8px" }}>
-            Frame: {currentFrame + 1}/{FRAMES.length}
-          </div>
-        )}
         {fontsLoaded ? (
           <pre
           ref={contentRef}

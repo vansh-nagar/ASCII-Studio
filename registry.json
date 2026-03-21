@@ -17,6 +17,19 @@
       ]
     },
     {
+      "name": "pitstop",
+      "type": "registry:block",
+      "title": "Pit Stop",
+      "description": "ASCII flame animation in a red terminal style. (Pitstop version)",
+      "files": [
+        {
+          "path": "src/components/ascii/pitstop.tsx",
+          "type": "registry:component",
+          "target": "components/ascii/pitstop.tsx"
+        }
+      ]
+    },
+    {
       "name": "cd",
       "type": "registry:block",
       "title": "CD Animation",
