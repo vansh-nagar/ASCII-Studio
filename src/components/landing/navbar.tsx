@@ -94,7 +94,6 @@ export default function Navbar() {
             className="text-xs border-red-500 dark:border-red-500"
           >
             <Github className="w-6 h-6 " /> <StarsCount />
-            /500
           </Button>
         </Link>
         <div className="relative flex items-center max-sm:hidden  ">

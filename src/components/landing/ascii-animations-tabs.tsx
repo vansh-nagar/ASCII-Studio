@@ -10,6 +10,7 @@ import CopyDropdown from "./copy-drop-down";
 import { useSearch } from "./search-context";
 import Lightning from "../ascii/lightning";
 import Skull from "../ascii/skull";
+import Balls from "../ascii/balls";
 
 type AnimationCard = {
   name: string;
@@ -65,6 +66,13 @@ const asciiAnimations: AnimationItem[] = [
 ];
 
 const specialEffects: SpecialEffectItem[] = [
+  {
+    name: "Balls",
+    description: "ASCII animation of bouncing balls.",
+    render: (isPlaying) => <Balls isPlaying={isPlaying} />,
+    registryName: "balls",
+    landscape: true,
+  },
   {
     name: "Star",
     description: "ASCII animation of a star.",

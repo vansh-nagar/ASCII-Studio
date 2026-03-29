@@ -69,19 +69,7 @@
       ]
     }
      ,
-      {
-        "name": "2-balls",
-        "type": "registry:block",
-        "title": "2 Balls Animation",
-        "description": "ASCII animation of two bouncing balls.",
-        "files": [
-          {
-            "path": "src/components/ascii/2-balls.tsx",
-            "type": "registry:component",
-            "target": "components/ascii/2-balls.tsx"
-          }
-        ]
-      },
+
       {
         "name": "dust",
         "type": "registry:block",
@@ -92,6 +80,19 @@
             "path": "src/components/ascii/Dust.tsx",
             "type": "registry:component",
             "target": "components/ascii/Dust.tsx"
+          }
+        ]
+      },
+      {
+        "name": "balls",
+        "type": "registry:block",
+        "title": "Balls Animation",
+        "description": "ASCII animation of bouncing balls.",
+        "files": [
+          {
+            "path": "src/components/ascii/balls.tsx",
+            "type": "registry:component",
+            "target": "components/ascii/balls.tsx"
           }
         ]
       }
