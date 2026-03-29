@@ -8,12 +8,6 @@
   Turn videos into precise, high-performance ASCII animations.
 </p>
 
-<p align="center">
-  <a href="#">Live Demo</a> • 
-  <a href="#">Documentation</a> • 
-  <a href="#">Report Bug</a>
-</p>
-
 ---
 
 ### Preview
@@ -22,18 +16,12 @@ https://github.com/user-attachments/assets/1537e97a-ff49-42f6-8d42-dd3fcdaa280f
 
 ---
 
-### UI Showcase
+### Star History
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/6c18fb5d-1b14-4dc9-9184-bd3702856eb9" width="100%" />
-</p>
-
----
-
-### More Demos
-
-https://github.com/user-attachments/assets/fbbf2ecf-7502-424e-9438-e298a3fb9f4e
-
-https://github.com/user-attachments/assets/846e302e-aae5-45fc-bd87-33742248bb5f
-
-https://github.com/user-attachments/assets/2a2cd94a-f2db-4db7-b8c5-e944158c04c5
+<a href="https://www.star-history.com/?repos=vansh-nagar%2Fascii-studio&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/image?repos=vansh-nagar/ascii-studio&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/image?repos=vansh-nagar/ascii-studio&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/image?repos=vansh-nagar/ascii-studio&type=date&legend=top-left" />
+ </picture>
+</a>
