@@ -132,18 +132,21 @@ export default function AsciiAnimationsTabs() {
   const filteredSpecial = filterList(specialEffects);
 
   return (
-    <Tabs defaultValue="regular" className="w-full ">
+    <Tabs
+      defaultValue="regular"
+      className="w-full flex flex-col items-center gap-4 mt-6"
+    >
       <div className="flex justify-center">
         <TabsList className="flex rounded-full gap-4 overflow-x-auto w-[95vw] sm:w-[70vw] overflow-y-hidden dark:bg-black">
           <TabsTrigger
             value="regular"
-            className="z-50 cursor-pointer group text-xs rounded-full"
+            className="z-20 cursor-pointer group text-xs rounded-full border"
           >
             Regular Ascci
           </TabsTrigger>
           <TabsTrigger
             value="special"
-            className="z-50 cursor-pointer group text-xs rounded-full"
+            className="z-20 cursor-pointer group text-xs rounded-full"
           >
             Special Ascci (hover to play)
           </TabsTrigger>

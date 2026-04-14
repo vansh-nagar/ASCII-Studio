@@ -62,7 +62,7 @@ export default function CopyDropdown({
       <DropdownMenuTrigger asChild>
         <Button
           variant={"outline"}
-          className={`text-xs cursor-pointer z-30 relative border right-0.5 top-0.5 rounded-full ${className}`}
+          className={`text-xs cursor-pointer z-30 gap-2 relative border right-0.5 top-0.5 rounded-full ${className}`}
         >
           <Copy className="size-3" /> Copy
         </Button>

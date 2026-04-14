@@ -156,7 +156,7 @@ const Navbar = () => {
           href="/"
           className="flex items-center gap-2 transition-all duration-300 hover:opacity-80"
         >
-          <Image
+          <img
             src="/logo/logo.png"
             alt="Logo"
             className="object-cover h-12 aspect-square rounded-full"
