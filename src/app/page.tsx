@@ -11,11 +11,11 @@ import React from "react";
 const Page = () => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar />
       <div className=" mt-28">
         <AsciiAnimationsGrid />
-      </div>
-      {/* <div className=" flex flex-col justify-center items-center min-h-screen w-full relative font-satoshi ">
+      </div> */}
+      <div className=" flex flex-col justify-center items-center min-h-screen w-full relative font-satoshi ">
         <Navbar />
         <div className="landing-sections-stack">
           <div className="w-full relative">
@@ -27,7 +27,7 @@ const Page = () => {
           <Faq />
           <Footer />
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };
