@@ -7,6 +7,16 @@ import { Analytics } from "@vercel/analytics/next";
 export const metadata: Metadata = {
   title: "ascii studio",
   description: "ascii studio",
+  openGraph: {
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "ascii studio OG image",
+      },
+    ],
+  },
   icons: {
     icon: [
       { url: "/favicon.ico" },
@@ -55,7 +65,7 @@ export default function RootLayout({
           href="https://api.fontshare.com/v2/css?font=satoshi@300,400,500,700&font=cabinet-grotesk@400,500,700&display=swap"
         />
       </head>
-      <body className="dark">
+      <body>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
