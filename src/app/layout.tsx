@@ -53,7 +53,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`h-full antialiased dark ${geistPixelGrid.variable} `}
+      className={`h-full antialiased ${geistPixelGrid.variable}`}
     >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
