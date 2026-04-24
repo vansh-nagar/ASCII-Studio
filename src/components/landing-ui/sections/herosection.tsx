@@ -47,7 +47,7 @@ const HeroSection = () => {
   return (
     <>
       {" "}
-      <section className="z-10 flex flex-col w-full items-center justify-center text-center mt-[23vh]">
+      <section className="z-10 flex flex-col w-full items-center justify-center text-center mt-[12vh] md:mt-[23vh]">
         <div className="z-40 flex flex-col justify-center items-center">
           <motion.div
             layout
@@ -87,7 +87,7 @@ const HeroSection = () => {
               </div>
             </button>
           </motion.div>
-          <div className="mt-6 text-7xl relative cursor-default">
+          <div className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl relative cursor-default">
             Turn{" "}
             <motion.span
               className="relative inline-block align-baseline"
@@ -111,7 +111,7 @@ const HeroSection = () => {
                 into
               </motion.span>{" "}
               <motion.svg
-                className=" absolute top-6 -right-24 pointer-events-none"
+                className="hidden sm:block absolute top-6 -right-24 pointer-events-none"
                 width="454"
                 height="229"
                 viewBox="0 0 454 229"
@@ -345,7 +345,7 @@ const HeroSection = () => {
               </motion.svg>
             </span>
             <motion.img
-              className="h-14 absolute top-0 -left-16 rotate-6 rounded-xl aspect-square object-cover pointer-events-none"
+              className="hidden sm:block h-14 absolute top-0 -left-16 rotate-6 rounded-xl aspect-square object-cover pointer-events-none"
               src="https://i.pinimg.com/736x/13/5d/6c/135d6c81b4b03da679355d6120375c6f.jpg"
               alt=""
               initial={{ opacity: 0, scale: 0.5, x: 64, y: 12 }}
@@ -357,7 +357,7 @@ const HeroSection = () => {
               transition={getImageTransition(0)}
             />
             <motion.img
-              className="h-14 absolute top-0 -right-16 -rotate-6 rounded-xl aspect-square object-cover pointer-events-none"
+              className="hidden sm:block h-14 absolute top-0 -right-16 -rotate-6 rounded-xl aspect-square object-cover pointer-events-none"
               src="https://i.pinimg.com/1200x/c1/a4/5e/c1a45ed0afc3859009b99ad91fbb0f45.jpg"
               alt=""
               initial={{ opacity: 0, scale: 0.5, x: -64, y: 12 }}
@@ -369,7 +369,7 @@ const HeroSection = () => {
               transition={getImageTransition(0.02)}
             />
             <motion.img
-              className="h-14 absolute bottom-0 -left-16 rotate-[30deg] rounded-xl aspect-square object-cover pointer-events-none"
+              className="hidden sm:block h-14 absolute bottom-0 -left-16 rotate-30 rounded-xl aspect-square object-cover pointer-events-none"
               src="https://i.pinimg.com/736x/13/5d/6c/135d6c81b4b03da679355d6120375c6f.jpg"
               alt=""
               initial={{ opacity: 0, scale: 0.5, x: 64, y: -12 }}
@@ -381,7 +381,7 @@ const HeroSection = () => {
               transition={getImageTransition(0.04)}
             />
             <motion.img
-              className="h-14 absolute bottom-0 -right-16 -rotate-[30deg] rounded-xl aspect-square object-cover pointer-events-none"
+              className="hidden sm:block h-14 absolute bottom-0 -right-16 -rotate-30 rounded-xl aspect-square object-cover pointer-events-none"
               src="https://i.pinimg.com/1200x/c1/a4/5e/c1a45ed0afc3859009b99ad91fbb0f45.jpg"
               alt=""
               initial={{ opacity: 0, scale: 0.5, x: -64, y: -12 }}
@@ -393,7 +393,7 @@ const HeroSection = () => {
               transition={getImageTransition(0.06)}
             />
             <motion.img
-              className="h-14 absolute bottom-1/2 translate-y-1/2 -left-40 -rotate-[24deg] rounded-xl aspect-square object-cover pointer-events-none"
+              className="hidden sm:block h-14 absolute bottom-1/2 translate-y-1/2 -left-40 -rotate-24 rounded-xl aspect-square object-cover pointer-events-none"
               src="https://i.pinimg.com/736x/13/5d/6c/135d6c81b4b03da679355d6120375c6f.jpg"
               alt=""
               initial={{ opacity: 0, scale: 0.5, x: 96, y: 25 }}
@@ -405,7 +405,7 @@ const HeroSection = () => {
               transition={getImageTransition(0.08)}
             />
             <motion.img
-              className="h-14 absolute bottom-1/2 translate-y-1/2 -right-40 rotate-[24deg] rounded-xl aspect-square object-cover pointer-events-none"
+              className="hidden sm:block h-14 absolute bottom-1/2 translate-y-1/2 -right-40 rotate-24 rounded-xl aspect-square object-cover pointer-events-none"
               src="https://i.pinimg.com/1200x/c1/a4/5e/c1a45ed0afc3859009b99ad91fbb0f45.jpg"
               alt=""
               initial={{ opacity: 0, scale: 0.5, x: -96, y: 25 }}
@@ -421,13 +421,13 @@ const HeroSection = () => {
             style={{
               lineHeight: "120%",
             }}
-            className="text-xl mt-5"
+            className="text-base sm:text-xl mt-5 px-4 sm:px-0"
           >
-            Convert video into character-based frames <br /> that run smoothly
-            in sequence.
+            Convert video into character-based frames{" "}
+            <br className="hidden sm:block" /> that run smoothly in sequence.
           </div>
-          <section className="flex gap-2 mt-8">
-            <Link href={"/studio"}>
+          <section className="flex flex-wrap justify-center gap-2 mt-8">
+            <Link href={"https://tool.asciistudio.space/studio"}>
               <Button
                 className="group relative overflow-hidden transition-[padding] duration-200 hover:pr-10"
                 variant="landingBlue"

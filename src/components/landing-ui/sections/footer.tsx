@@ -6,25 +6,27 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="flex justify-center items-center pb-20">
+    <div className="flex justify-center items-center pb-10 sm:pb-20">
       <div
-        className="landing-content-width p-8 flex flex-col gap-8"
+        className="landing-content-width p-4 sm:p-8 flex flex-col gap-4 sm:gap-8"
         style={{
           background: "#FFFFFF",
           boxShadow:
             "0px 4px 1px rgba(0, 0, 0, 0.01), 0px 2px 1px rgba(0, 0, 0, 0.05), 0px 1px 1px rgba(0, 0, 0, 0.09), 0px 0px 1px rgba(0, 0, 0, 0.1), inset 0px 2px 2.2px #FFFFFF",
-          borderRadius: "32px",
+          borderRadius: "20px",
         }}
       >
-        <div className="flex justify-between">
-          <div className="flex flex-col gap-4">
-            <div className="text-4xl">Start creating ASCII</div>
-            <div>
-              Turn your ideas into stunning ASCII art in seconds no <br /> setup
-              Upload an image or start from text
+        <div className="flex flex-col gap-4 sm:flex-row sm:justify-between">
+          <div className="flex flex-col gap-2 sm:gap-4">
+            <div className="text-xl sm:text-2xl md:text-4xl font-medium">
+              Start creating ASCII
+            </div>
+            <div className="text-sm sm:text-base text-muted-foreground">
+              Turn your ideas into stunning ASCII art in seconds — no setup.
+              Upload an image or start from text.
             </div>
           </div>
-          <div className="flex flex-col items-end gap-2">
+          <div className="flex flex-row sm:flex-col flex-wrap items-start sm:items-end gap-2">
             <Link href={"/studio"}>
               <Button
                 className="group relative overflow-hidden transition-[padding] duration-200 hover:pr-10"
@@ -85,11 +87,11 @@ const Footer = () => {
           </div>
         </div>
         <div
-          className="p-8 flex flex-col gap-4"
+          className="p-4 sm:p-8 flex flex-col gap-3 sm:gap-4"
           style={{
             background: "#F5F5F5",
             border: "1px solid #E8E8E8",
-            borderRadius: "16px",
+            borderRadius: "12px",
           }}
         >
           <Link
@@ -99,14 +101,16 @@ const Footer = () => {
             <img
               src="/logo/logo.png"
               alt="Logo"
-              className="object-cover h-12 aspect-square rounded-full"
+              className="object-cover  h-8 w-8 sm:h-12 lg:w-12 aspect-square rounded-full shrink-0"
               width={48}
               height={48}
             />
-            <span className="text-2xl">Ascii Studio</span>
+            <span className=" text-2xl whitespace-nowrap font-medium">
+              Ascii Studio
+            </span>
           </Link>
           <svg
-            className="w-full my-4"
+            className="w-full my-2 sm:my-4"
             height="3"
             viewBox="0 0 834 3"
             fill="none"
@@ -117,7 +121,7 @@ const Footer = () => {
             <line y1="1.69531" x2="834" y2="1.69531" stroke="white" />
           </svg>
           <svg
-            className="w-full"
+            className="w-full h-auto"
             viewBox="0 0 822 107"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

@@ -76,8 +76,8 @@ body {
 
 @layer base {
   :root {
-    --landing-content-width: 65vw;
-    --landing-section-gap: 10rem;
+    --landing-content-width: 92vw;
+    --landing-section-gap: 5rem;
     --color-1: #79a4ff;
     --color-2: hsl(270 100% 63%);
     --color-3: hsl(210 100% 63%);
@@ -134,9 +134,23 @@ body {
   }
 }
 
+@media (min-width: 768px) {
+  :root {
+    --landing-content-width: 80vw;
+    --landing-section-gap: 7rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --landing-content-width: 70vw;
+    --landing-section-gap: 9rem;
+  }
+}
+
 @media (min-width: 1600px) {
   :root {
-    --landing-content-width: 50vw;
+    --landing-content-width: 55vw;
     --landing-section-gap: 6rem;
   }
 }

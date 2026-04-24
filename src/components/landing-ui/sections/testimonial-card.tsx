@@ -7,6 +7,7 @@ type TestimonialCardProps = {
   role: string;
   avatarSrc: string;
   content: string;
+  tweetUrl?: string;
   className?: string;
 };
 
@@ -15,6 +16,7 @@ const TestimonialCard = ({
   role,
   avatarSrc,
   content,
+  tweetUrl,
   className,
 }: TestimonialCardProps) => {
   const [isCardHovered, setIsCardHovered] = React.useState(false);
@@ -29,7 +31,7 @@ const TestimonialCard = ({
 
   return (
     <div
-      className={`relative p-5 w-full flex flex-col gap-5 justify-between items-center ${className ?? ""}`}
+      className={`relative p-5 w-full flex flex-col justify-between items-center gap-5`}
       onMouseEnter={() => setIsCardHovered(true)}
       onMouseLeave={() => setIsCardHovered(false)}
       style={{
@@ -97,12 +99,14 @@ const TestimonialCard = ({
           </div>
         </div>
 
-        <motion.button
-          type="button"
+        <motion.a
+          href={tweetUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex h-9 items-center justify-center gap-1 rounded-full px-1"
           onHoverStart={() => setIsTwitterHovered(true)}
           onHoverEnd={() => setIsTwitterHovered(false)}
-          aria-label="Open Twitter"
+          aria-label="Open tweet"
         >
           <div className="flex h-4 w-4 items-center cursor-pointer justify-center">
             <AnimatePresence mode="wait" initial={false}>
@@ -151,11 +155,11 @@ const TestimonialCard = ({
               )}
             </AnimatePresence>
           </div>
-        </motion.button>
+        </motion.a>
       </div>
 
       <div
-        className="relative z-10 text-left text-sm"
+        className="relative z-10 text-left font-medium w-full text-sm"
         style={{ lineHeight: "150%" }}
       >
         {content}

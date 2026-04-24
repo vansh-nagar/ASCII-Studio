@@ -26,7 +26,7 @@ const Bento = () => {
         </motion.span>
         Key Features
       </div>
-      <span className="text-5xl mt-2">
+      <span className="text-3xl sm:text-4xl md:text-5xl mt-2">
         Explore Our <br />
         <span
           style={
@@ -42,8 +42,8 @@ const Bento = () => {
           Standout Features{" "}
         </span>
       </span>
-      <div className="landing-content-width gap-4 mt-10 grid grid-rows-[8fr_6fr] h-[80vh] ">
-        <div className=" grid grid-cols-2 gap-4 ">
+      <div className="landing-content-width gap-4 mt-10 grid grid-rows-1 md:grid-rows-[8fr_6fr] h-auto md:h-[80vh]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 min-h-100 sm:min-h-0">
           <div
             className=""
             style={{
@@ -101,7 +101,7 @@ const Bento = () => {
             />
           </div>
         </div>
-        <div className=" grid grid-cols-[1.1fr_0.9fr]  gap-4 ">
+        <div className="grid grid-cols-1 sm:grid-cols-[1.1fr_0.9fr] gap-4 min-h-80 sm:min-h-0">
           <div
             className="relative"
             style={{

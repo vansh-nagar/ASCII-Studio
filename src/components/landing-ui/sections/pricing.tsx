@@ -255,7 +255,7 @@ const Pricing = () => {
                         className="flex gap-1.5"
                         variants={pointVariants}
                       >
-                        <Check className="text-muted-foreground" />
+                        <Check className="text-muted-foreground shrink-0 size-5 mt-0.5" />
                         <span className="text">{point}</span>
                       </motion.div>
                     ))}
@@ -285,7 +285,7 @@ const Pricing = () => {
                 <AnimatePresence mode="wait" initial={false}>
                   <motion.div
                     key={activeTab}
-                    className="h-full"
+                    className="h-full max-sm:min-h-[20vh]"
                     initial={{ opacity: 0 }}
                     animate={{
                       opacity: 1,

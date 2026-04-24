@@ -46,10 +46,10 @@ const Faq = () => {
 
   return (
     <div className="flex justify-center items-center">
-      <div className="landing-content-width flex justify-center items-start gap-14">
+      <div className="landing-content-width flex flex-col md:flex-row justify-center items-start gap-8 md:gap-14">
         <div>
           <div className=" flex flex-col gap-8">
-            <div className="text-4xl">
+            <div className="text-2xl md:text-4xl">
               Frequently asked <br /> questions
             </div>
             <svg
@@ -65,7 +65,7 @@ const Faq = () => {
             </svg>
 
             <div>
-              Can’t find the answer you’re looking for? I’m <br /> here to help.
+              Can’t find the answer you’re looking for? I’m here to help.
             </div>
           </div>
           <Button className="mt-4" variant="landingBlue" size="landing">
